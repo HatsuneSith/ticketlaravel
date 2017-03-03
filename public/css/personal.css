@@ -1,0 +1,127 @@
+body {
+    background-color: #DBFFF7;
+}
+
+li {
+    list-style-type: none;
+}
+
+.pokefondo{
+    text-align: center;
+    background-color: #CEFFDE;
+    margin:20px;
+    padding: 30px;
+    max-width: 230px;
+    max-height: 200px;
+    border-radius: 15px;
+}
+.pokefondo:hover {
+    background-color: #CEF3FF;
+    box-shadow: 2px 2px 10px #000000;
+}
+
+.pokecenter {
+    text-align: center;
+}
+
+.paddingpokemon {
+    padding: 50px 30px 50px 80px;
+}
+
+.kaitocolor {
+    background-color: #CEF3FF;
+}
+
+.mikucolor {
+    background-color: #CEFFDE;
+}
+
+.Bug {
+    background-color: #A6B91A;
+    border-radius: 8px;
+}
+
+.Dark {
+    border-radius: 8px;
+    background-color: #705746;
+}
+
+.Dragon {
+    border-radius: 8px;
+    background-color: #6F35FC;
+}
+
+.Electric {
+    border-radius: 8px;
+    background-color: #F7D02C;
+}
+
+.Fairy {
+    border-radius: 8px;
+    background-color: #D685AD;
+}
+
+.Fighting {
+    border-radius: 8px;
+    background-color: #C22E28;
+}
+
+.Fire {
+    border-radius: 8px;
+    background-color: #EE8130;
+}
+
+.Flying {
+    border-radius: 8px;
+    background-color: #A98FF3;
+}
+
+.Spooky {
+    border-radius: 8px;
+    background-color: #735797;
+}
+
+.Grass {
+    border-radius: 8px;
+    background-color: #7AC74C;
+}
+
+.Ground {
+    border-radius: 8px;
+    background-color: #E2BF65;
+}
+
+.Ice {
+    border-radius: 8px;
+    background-color: #96D9D6;
+}
+
+.Normal {
+    border-radius: 8px;
+    background-color: #A8A77A;
+}
+
+.Poison {
+    border-radius: 8px;
+    background-color: #A33EA1;
+}
+
+.Psychic {
+    border-radius: 8px;
+    background-color: #F95587;
+}
+
+.Rock {
+    border-radius: 8px;
+    background-color: #B6A136;
+}
+
+.Steel {
+    border-radius: 8px;
+    background-color: #B7B7CE;
+}
+
+.Water {
+    border-radius: 8px;
+    background-color: #6390F0;
+}

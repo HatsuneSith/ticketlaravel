@@ -12,5 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('inicio');
+});
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Testing Routes
+|--------------------------------------------------------------------------
+|
+|
+*/
+
+Route::get('/usuario/{id}', function($id){
+	$name = App\tabla3::find($id);
+	echo $name->nombre;
 });
