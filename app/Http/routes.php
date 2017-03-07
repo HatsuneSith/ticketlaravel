@@ -26,6 +26,10 @@ Route::get('/', function () {
 */
 
 Route::get('/usuario/{id}', function($id){
-	$name = App\tabla3::find($id);
-	echo $name->nombre;
+	$varname = App\user::find($id);
+	echo $varname;
 });
+
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
