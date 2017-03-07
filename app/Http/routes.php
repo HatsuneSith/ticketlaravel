@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('inicio');
 });
@@ -33,3 +34,4 @@ Route::get('/usuario/{id}', function($id){
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+Route::get('/newticket', 'HomeController@nuevo');

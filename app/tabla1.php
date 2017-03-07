@@ -13,8 +13,8 @@ class tabla1 extends Model
         return $this->hasMany('App\tabla2');
     }
 
-    public function tabla3()
+    public function User()
     {
-        return $this->belongsTo('App\tabla3');
+        return $this->belongsTo('App\User');
     }
 }
