@@ -5,8 +5,7 @@
 
 @section('contenido')
 	<div class="jumbotron">
-	  <h1>Markoptic</h1>
-	  <p>Ticketz.</p>
-	  <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+	  <h1>El ticket ha sido creado con exito</h1>
+	  <p><a class="btn btn-primary btn-lg" href="{{ url('/') }}">Continuar</a></p>
 	</div>
 @stop

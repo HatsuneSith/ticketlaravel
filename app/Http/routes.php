@@ -16,6 +16,11 @@ Route::get('/', function () {
     return view('inicio');
 });
 
+Route::auth();
+
+Route::get('/home', 'HomeController@index');
+Route::get('/newticket', 'HomeController@nuevo');
+Route::post('/guardarProyecto', 'HomeController@agregar_ticket');
 
 
 /*
@@ -31,7 +36,4 @@ Route::get('/usuario/{id}', function($id){
 	echo $varname;
 });
 
-Route::auth();
 
-Route::get('/home', 'HomeController@index');
-Route::get('/newticket', 'HomeController@nuevo');
