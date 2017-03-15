@@ -1,10 +1,12 @@
 @extends('mainpage')
 @section('encabezado')
-	<h2>Sistema de control de insidencias</h2>
+  <h2>Sistema de control de incidencias</h2>
 @stop
 
+{{-- Comment: Necesita darle forma y empezar a moverle. --}}
+
 @section('contenido')
-<form class="form-horizontal" method="POST" action="{{url('/guardarProyecto')}}" enctype="multipart/form-data">
+<form class="form-horizontal" method="POST" action="{{url('/agregar_ticket')}}" enctype="multipart/form-data">
   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
   <fieldset>
     <legend>Nuevo Ticket</legend>
@@ -12,10 +14,11 @@
       <label for="select" class="col-lg-2 control-label">Naturaleza</label>
       <div class="col-lg-10">
         <select class="form-control" id="select" name="naturaleza">
-          <option>Problema con el sistema / la pagina.</option>
-          <option>Problema con la computadora.</option>
-          <option>Problema con las instalaciones.</option>
-          <option>Otro.</option>
+          <option value="1">Problema con el sistema / la pagina.</option>
+          <option value="2">Problema con la computadora.</option>
+          <option value="3">Problema con las instalaciones.</option>
+          <option value="4">Problema con otro departamento.</option>
+          <option value="99">Otro.</option>
         </select>
       </div>
     </div>
@@ -38,19 +41,19 @@
       <div class="col-lg-10">
         <div class="radio">
           <label>
-            <input type="radio" id="Radios1" value="Alta" name="nivel">
+            <input type="radio" id="Radios1" value="3" name="nivel">
             Alta
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" id="Radios2" value="Media" name="nivel">
+            <input type="radio" id="Radios2" value="2" name="nivel">
             Mediana
           </label>
         </div>
         <div class="radio">
           <label>
-            <input type="radio" id="Radios3" value="Baja" name="nivel" checked="">
+            <input type="radio" id="Radios3" value="1" name="nivel" checked="">
             Baja
           </label>
         </div>

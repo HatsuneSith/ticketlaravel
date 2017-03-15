@@ -19,8 +19,14 @@ Route::get('/', function () {
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
-Route::get('/newticket', 'HomeController@nuevo');
-Route::post('/guardarProyecto', 'HomeController@agregar_ticket');
+Route::get('/nuevo_ticket', 'HomeController@nuevo');
+Route::post('/agregar_ticket', 'HomeController@agregar_ticket');
+Route::post('/agregar_respuesta', 'HomeController@agregar_respuesta');
+Route::get('/lista', 'HomeController@lista_ticket');
+Route::get('/seguir', 'HomeController@seguir_ticket');
+Route::get('/eliminar_ticket/{id}', 'HomeController@eliminar_ticket');
+Route::get('/responder/{id}', 'HomeController@responder_ticket');
+
 
 
 /*
@@ -30,6 +36,7 @@ Route::post('/guardarProyecto', 'HomeController@agregar_ticket');
 |
 |
 */
+
 
 Route::get('/usuario/{id}', function($id){
 	$varname = App\user::find($id);

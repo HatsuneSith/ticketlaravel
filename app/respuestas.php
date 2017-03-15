@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class tabla1 extends Model
+class respuestas extends Model
 {
-    protected $table = "tabla1";
+    protected $table = "respuestas";
 
-    public function tabla2()
+    public function incidencias()
     {
-        return $this->hasMany('App\tabla2');
+        return $this->belongsTo('App\incidencias');
     }
 
     public function User()

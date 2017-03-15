@@ -21,18 +21,23 @@
 
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="{{url('/newticket')}}">Nuevo Ticket<span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Seguir Ticket</a></li>
+	        <li class="active"><a href="{{url('/nuevo_ticket')}}">Nuevo Ticket<span class="sr-only">(current)</span></a></li>
+	        <li><a href="{{url('/seguir')}}">Seguir Ticket</a></li>
+
+	        @if (!Auth::guest())
+	        @if(Auth::user()->rol == '1'|| Auth::user()->rol == '2'|| Auth::user()->rol == '3')
 	        <li class="dropdown">
 	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Admin <span class="caret"></span></a>
 	          <ul class="dropdown-menu" role="menu">
 	            <li><a href="{{url('/usuario/1')}}">Testing Usuario 1</a></li>
 	            <li><a href="{{url('/usuario/2')}}">Testing Usuario 2</a></li>
-	            <li><a href="{{url('/usuario/3')}}">Testing Usuario 3</a></li>
+	            <li><a href="{{url('/usuario/3')}}">Testing Usuario 2</a></li>
 	            <li class="divider"></li>
-	            <li><a href="#">Lista de insidencias</a></li>
+	            <li><a href="{{url('/lista')}}">Lista de insidencias</a></li>
 	          </ul>
 	        </li>
+	        @endif
+	        @endif
 	      </ul>
 	      <ul class="nav navbar-nav navbar-right">
 	        
@@ -67,6 +72,6 @@
 		<hr>
 		<div class="text-center">Markoptic &copy; 2017</div>
 	</footer>
-	<script src="{{ asset("js/bootstrap.js") }}"></script>
+	<script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>
 </html>
