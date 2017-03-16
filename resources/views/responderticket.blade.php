@@ -12,20 +12,17 @@
       <h4><small>Ticket Original</small></h4>
       <h5>
       @if($ticket->rol=='1')
-          <span class="label label-danger">Admnistrador</span>
+          <span class="label label-danger">Directivo</span>
       @endif
       @if($ticket->rol=='2')
-          <span class="label label-primary">Coordinador</span>
+          <span class="label label-primary">Administrador</span>
        @endif
       @if($ticket->rol=='3')
-          <span class="label label-success">Tecnico</span>
+          <span class="label label-success">Colaborador</span>
       @endif
       @if($ticket->rol=='4')
-          <span class="label label-info">Empleado Gallbo</span>
+          <span class="label label-info">Empleado</span>
       @endif
-      @if($ticket->rol=='5')
-          <span class="label label-info">Empleado Markoptic</span>
-       @endif
       <span class="glyphicon glyphicon-time"></span> {{$ticket->name_user}}, {{$ticket->created_at}}.</h5>
       <h5>
       @if($ticket->nivel=='3')
@@ -42,17 +39,17 @@
 
       @if(file_exists(public_path().'/tickets/'.$ticket->id.'/'.$ticket->id.'a.jpg'))
       <!-- Trigger del modal (imagen miniatura) -->
-      <img data-toggle="modal" data-target="#myModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}a.jpg" class="img-responsive" height="100" width="100">
+      <img data-toggle="modal" data-target="#ticketModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}a.jpg" class="img-responsive" height="100" width="100">
 
       <!-- Modal (imagen en grande)-->
-      <div id="myModal" class="modal fade" role="dialog">
+      <div id="ticketModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Screenshot Adjunta</h4>
+              <h4 class="modal-title">Imagen Adjunta</h4>
             </div>
-              <img data-toggle="modal" data-target="#myModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}a.jpg" class="img-responsive">
+              <img data-toggle="modal" data-target="#ticketModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}a.jpg" class="img-responsive">
             <div class="modal-footer">
               <a href="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}a.jpg" type="button" class="btn btn-default">Tamaño Completo</a>
             </div>
@@ -73,7 +70,7 @@
       @foreach($respuestas as $res)
       <h5>
       @if($res->rol=='1')
-          <span class="label label-danger">Admnistrador</span>
+          <span class="label label-danger">Directivo</span>
       @endif
       @if($res->rol=='2')
           <span class="label label-primary">Coordinador</span>
@@ -82,28 +79,25 @@
           <span class="label label-success">Tecnico</span>
       @endif
       @if($res->rol=='4')
-          <span class="label label-info">Empleado Gallbo</span>
+          <span class="label label-info">Empleado</span>
       @endif
-      @if($res->rol=='5')
-          <span class="label label-info">Empleado Markoptic</span>
-       @endif
       <span class="glyphicon glyphicon-time"></span> Respuesta de {{$res->name_user}}, {{$res->created_at}}.</h5>
       <h5></h5><br>
       <p>{{$res->contenido}}</p>
 
       @if(file_exists(public_path().'/tickets/'.$ticket->id.'/'.$res->id.'b.jpg'))
       <!-- Trigger del modal (imagen miniatura) -->
-      <img data-toggle="modal" data-target="#myModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$res->id}}b.jpg" class="img-responsive" height="100" width="100">
+      <img data-toggle="modal" data-target="#my{{$res->id}}" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$res->id}}b.jpg" class="img-responsive" height="100" width="100">
 
       <!-- Modal (imagen en grande)-->
-      <div id="myModal" class="modal fade" role="dialog">
+      <div id="my{{$res->id}}" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Screenshot Adjunta</h4>
+              <h4 class="modal-title">Imagen Adjunta</h4>
             </div>
-              <img data-toggle="modal" data-target="#myModal" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$ticket->id}}b.jpg" class="img-responsive">
+              <img data-toggle="modal" data-target="#my{{$res->id}}" src="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$res->id}}b.jpg" class="img-responsive">
             <div class="modal-footer">
               <a href="{{ asset('../public/tickets/')}}/{{$ticket->id}}/{{$res->id}}b.jpg" type="button" class="btn btn-default">Tamaño Completo</a>
             </div>
@@ -144,6 +138,29 @@
       <br><br>
       @endif
     </div>
+
+    @if(Auth::user()->rol == '1'|| Auth::user()->rol == '2')
+    <!-- Trigger del modal (imagen miniatura) -->
+    <button data-toggle="modal" data-target="#myDelete" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Eliminar Ticket</button>
+
+    <!-- Modal (imagen en grande)-->
+    <div id="myDelete" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Eliminar Ticket</h4>
+          </div>
+          <h5><center>¿Seguro que quieres eliminar el ticket?</center></h5>
+          <div class="modal-footer">
+            <a href="{{url('/eliminar_ticket')}}/{{$ticket->id}}" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true">Eliminar</span></a>
+            <button type="button" class="btn btn-success btn-xs" data-dismiss="modal"><span class=" glyphicon glyphicon-ban-circle" aria-hidden="true">Cancelar</span></button>
+          </div>
+        </div>  
+      </div>
+    </div>
+    @endif   
+
   </div>
 </div>
 

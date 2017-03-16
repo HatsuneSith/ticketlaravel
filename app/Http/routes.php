@@ -26,6 +26,7 @@ Route::get('/lista', 'HomeController@lista_ticket');
 Route::get('/seguir', 'HomeController@seguir_ticket');
 Route::get('/eliminar_ticket/{id}', 'HomeController@eliminar_ticket');
 Route::get('/responder/{id}', 'HomeController@responder_ticket');
+Route::post('/reasignar','HomeController@reasignar_ticket');
 
 
 

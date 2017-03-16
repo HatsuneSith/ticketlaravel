@@ -11,14 +11,13 @@
   <fieldset>
     <legend>Nuevo Ticket</legend>
     <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Naturaleza</label>
+      <label for="select" class="col-lg-2 control-label">Departamento</label>
       <div class="col-lg-10">
-        <select class="form-control" id="select" name="naturaleza">
-          <option value="1">Problema con el sistema / la pagina.</option>
-          <option value="2">Problema con la computadora.</option>
-          <option value="3">Problema con las instalaciones.</option>
-          <option value="4">Problema con otro departamento.</option>
-          <option value="99">Otro.</option>
+        <select class="form-control" id="select" name="departamento">
+          <option value="1">Direccion</option>
+          <option value="2">Fundacion</option>
+          <option value="3">Gallbo</option>
+          <option value="4">Juridico</option>
         </select>
       </div>
     </div>
@@ -29,7 +28,7 @@
       </div>
     </div>
     <div class="form-group">
-      <label for="screenshotlabel" class="col-lg-2 control-label">Screenshot</label>
+      <label for="screenshotlabel" class="col-lg-2 control-label">Screenshot / Foto</label>
       <div class="col-lg-10">
         <div class="fileUpload btn">
           <input  id="uploadBtn" type="file" class="upload" name="screenshot">
