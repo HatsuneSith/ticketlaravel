@@ -1,6 +1,6 @@
 @extends('mainpage')
 @section('encabezado')
-  <h2>Sistema de control de incidencias</h2>
+  <h2><a href="{{ url('/') }}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>Sistema de control de incidencias</h2>
 @stop
 
 {{-- Comment: Necesita darle forma y empezar a moverle. --}}
@@ -11,7 +11,7 @@
   <fieldset>
     <legend>Nuevo Ticket</legend>
     <div class="form-group">
-      <label for="select" class="col-lg-2 control-label">Departamento</label>
+      <label for="select" class="col-lg-2 control-label">Departamento a asignar</label>
       <div class="col-lg-10">
         <select class="form-control" id="select" name="departamento">
           <option value="1">Direccion</option>

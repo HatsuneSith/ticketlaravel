@@ -65,29 +65,6 @@
 					<td>
 						<a href="{{url('/responder')}}/{{$dk->id}}" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true">Ver ticket</span></a>
 					</td>
-					@if(Auth::user()->rol == '1'|| Auth::user()->rol == '2')
-					<td>
-				    <div class="btn-group">
-				      <a href="#" class="btn btn-info btn-xs dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-				        Delegar Ticket
-				        <span class="caret"></span>
-				      </a>
-				      <ul class="dropdown-menu">
-				      	@foreach($coo as $co)
-				        <li>
-				        <form method="POST" id="form_{{$dk->id}}_{{$co->id}}" action="{{url('/reasignar')}}">
-				        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
-				        <input type="hidden" name="ticket_id" value="{{$dk->id}}"/>
-				        <input type="hidden" name="new_col" value="{{$co->id}}"/>
-				        <input type="hidden" name="new_dep" value="{{$co->departamento}}"/>
-				        <a href="#" class=btn-default onclick="document.getElementById('form_{{$dk->id}}_{{$co->id}}').submit()">{{$co->name}}</a>
-				        </form>
-				        </li> 
-				        @endforeach
-				       </ul>
-				    </div>
-					</td>
-					@endif
 				</tr>
 			@endforeach
 		</tbody>

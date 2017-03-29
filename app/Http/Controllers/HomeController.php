@@ -173,7 +173,7 @@ class HomeController extends Controller
         ->where('users.id',$user->id)
         ->paginate(20);
 
-    return view('listatickets', compact('grupo'));
+    return view('seguirticket', compact('grupo'));
     }
 
     public function responder_ticket($id) {
@@ -209,10 +209,10 @@ class HomeController extends Controller
         $item ->save();
 
         $contestado = incidencias::find($request->input('id_ins'));
-        if ($request->cerrar == 1)
+        if ($request->nuevoestado == 9)
             $contestado->estado = 9;
         else
-            if($user->id == $contestado ->users_id)
+            if($user->id == $contestado ->users_id || $request->nuevoestado == 1)
                 $contestado->estado = 1;
             else
                 $contestado->estado = 2;
@@ -223,6 +223,8 @@ class HomeController extends Controller
 
         return view('respuestasuccess');
     }
+
+
 
 
     public function eliminar_ticket($id){

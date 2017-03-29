@@ -1,6 +1,6 @@
 @extends('mainpage')
 @section('encabezado')
-	<h2>Sistema de control de incidencias</h2>
+	<h2><a href="{{ url('/') }}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>Sistema de control de incidencias</h2>
 @stop
 
 @section('contenido')

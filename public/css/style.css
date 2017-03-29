@@ -26,6 +26,16 @@
   width: 300px;
 }
 
+.thumbnail:hover {
+  background-color: #214F77;
+  border: 1px solid #214F77;
+  color: #ffffff;
+  text-decoration: none;
+  -webkit-transition: border .2s ease-in-out;
+  -o-transition: border .2s ease-in-out;
+  transition: border .2s ease-in-out;
+}
+
 .bg-primary{
   color: #ffffff;
   background-color: #214F77;

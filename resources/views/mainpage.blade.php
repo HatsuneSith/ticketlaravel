@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Principal</title>
+	<link rel="stylesheet" href="{{asset("css/personal.css")}}">
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
 	<script src="{{ asset("js/jquery.js") }}"></script>
 </head>
@@ -70,7 +71,7 @@
 	</div>
 	<footer>
 		<hr>
-		<div class="text-center">Markoptic &copy; 2017</div>
+		<div class="text-center">Fundacion Markoptic &copy; 2017</div>
 	</footer>
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
 </body>

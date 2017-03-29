@@ -1,6 +1,6 @@
 @extends('mainpage')
 @section('encabezado')
-  <h2>Sistema de control de incidencias</h2>
+  <h2><a href="{{ URL::previous() }}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>Sistema de control de incidencias</h2>
 @stop
 
 @section('contenido')
@@ -122,7 +122,7 @@
         <h4>Responder al ticket:</h4>
         @if(Auth::user()->rol == '1'|| Auth::user()->rol == '2'|| Auth::user()->rol == '3')
         <label>
-          <input name="cerrar" value= '1' type="checkbox"> Cerrar ticket
+          <input name="nuevoestado" value= '9' type="checkbox"> Cerrar ticket
         </label>
         @endif
         <input name="id_ins" type="hidden" value="{{$ticket->id}}"/>
@@ -135,8 +135,26 @@
         </div>
       <button type="submit" class="btn btn-success">Contestar ticket</button>
       </form>
-      <br><br>
+
+       <!-- Aqui esta la zona para re abrir tickets -->
+      @else
+      <form role="form" method="POST" action="{{url('/agregar_respuesta')}}" enctype="multipart/form-data">
+        <h4>Reabrir el ticket:</h4>
+        <label>
+          <input name="nuevoestado" value= '1' type="checkbox" required> Abrir ticket
+        </label>
+        <input name="id_ins" type="hidden" value="{{$ticket->id}}"/>
+        <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
+        <div class="form-group">
+          <textarea name="contenido" class="form-control" rows="3" placeholder="Volver a abrir el ticket." required></textarea>
+        </div>
+        <div class="fileUpload btn">
+          <input  id="uploadBtn" type="file" class="upload" name="screenshot">
+        </div>
+      <button type="submit" class="btn btn-info">Abrir ticket</button>
+      </form>
       @endif
+      <br><br>
     </div>
 
     @if(Auth::user()->rol == '1'|| Auth::user()->rol == '2')
