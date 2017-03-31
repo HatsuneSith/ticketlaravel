@@ -1,17 +1,25 @@
 $(document).ready(function() {
 
 
-    $('#example').DataTable( {
-        "paging":   false,
-        "ordering": true,
-        "info":     false
-    } );
-
     $('#tabla_lista').DataTable( {
         "paging":   false,
         "ordering": true,
-        "info":     false
+        "info":     false,
+        'columns': [
+            null,   
+            null,
+            null,
+            null,
+            null,   
+            null,  
+            { 'searchable': false },
+            { 'searchable': false }
+        ]
     } );
 
 
+
+
 } );
+
+
