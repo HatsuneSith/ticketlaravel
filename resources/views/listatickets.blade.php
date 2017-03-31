@@ -4,7 +4,8 @@
 @stop
 
 @section('contenido')
-	<table class="table table-hover">
+<div class="table-responsive">
+	<table id="tabla_lista" class="table table-hover">
 		<thead>
 			<tr>
 				<th>Estado</th>
@@ -13,6 +14,10 @@
 				<th>Usuario</th>
 				<th>Colaborador Asignado</th>
 				<th>Fecha de apertura</th>
+				<th></th>
+				@if(Auth::user()->rol == '1'|| Auth::user()->rol == '2')
+				<th></th>
+				@endif
 			</tr>
 		</thead>
 		<tbody>
@@ -92,5 +97,7 @@
 			@endforeach
 		</tbody>
 	</table>
+</div>
+
 	{!! $grupo->render() !!}
 @stop

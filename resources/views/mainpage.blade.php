@@ -5,7 +5,12 @@
 	<title>Principal</title>
 	<link rel="stylesheet" href="{{asset("css/personal.css")}}">
 	<link rel="stylesheet" href="{{asset("css/bootstrap.css")}}">
-	<script src="{{ asset("js/jquery.js") }}"></script>
+	<link rel="stylesheet" href="{{asset("css/jquery.dataTables.min.css")}}">
+	<script src="{{ asset('js/jquery.js') }}"></script>
+	<script src="{{ asset('js/datatable.js') }}"></script>
+	<script src="{{ asset('js/copytable.js') }}"></script>
+	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
+	
 </head>
 <body>
 	<nav class="navbar navbar-default">
@@ -24,7 +29,7 @@
 	      <ul class="nav navbar-nav">
 	        <li class="active"><a href="{{url('/nuevo_ticket')}}">Nuevo Ticket<span class="sr-only">(current)</span></a></li>
 	        <li><a href="{{url('/seguir')}}">Seguir Ticket</a></li>
-
+  
 	        @if (!Auth::guest())
 	        @if(Auth::user()->rol == '1'|| Auth::user()->rol == '2'|| Auth::user()->rol == '3')
 	        <li class="dropdown">
@@ -74,5 +79,10 @@
 		<div class="text-center">Fundacion Markoptic &copy; 2017</div>
 	</footer>
 	<script src="{{ asset('js/bootstrap.js') }}"></script>
+	<!--
+	<script src="{{ asset('js/promocion.js') }}"></script>
+	<script src="{{ asset('js/funciones.js') }}"></script>
+	</script>
+	-->
 </body>
 </html>

@@ -28,8 +28,6 @@ Route::get('/eliminar_ticket/{id}', 'HomeController@eliminar_ticket');
 Route::get('/responder/{id}', 'HomeController@responder_ticket');
 Route::post('/reasignar','HomeController@reasignar_ticket');
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Testing Routes
@@ -37,7 +35,6 @@ Route::post('/reasignar','HomeController@reasignar_ticket');
 |
 |
 */
-
 
 Route::get('/usuario/{id}', function($id){
 	$varname = App\user::find($id);

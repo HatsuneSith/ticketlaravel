@@ -36,21 +36,6 @@ class HomeController extends Controller
         $item = new \App\incidencias;
         $user = Auth::user();
 
-        /*Asignar a un tecnico Random
-
-        $tech = DB:: table('users')
-            ->leftjoin('incidencias', 'users.id', '=', 'incidencias.asignado')
-            ->where('incidencias.estado', 1)
-            ->orWhere('incidencias.estado', 2)
-            ->orWhere('incidencias.estado', null)
-            ->select(DB::raw('count(incidencias.asignado) as tec_count, users.id, users.rol'))
-            ->where('users.rol', 3)
-            ->groupBy('users.id')
-            ->orderBy('tec_count', 'asc')
-            ->first();
-
-        */
-
         // Asignar a un coordinador pertinente
         $tech = DB:: table('users')
             ->leftjoin('incidencias', 'users.id', '=', 'incidencias.asignado')
@@ -235,11 +220,4 @@ class HomeController extends Controller
     return redirect()->back();
     }
 
-
-
-    //
-    //
-    // DEBUGGING
-    //
-    //
 }
