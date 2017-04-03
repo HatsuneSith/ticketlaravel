@@ -66,6 +66,7 @@
 
 
       <hr>
+      <hr>
       <h4>Respuestas</h4>
       @foreach($respuestas as $res)
       <h5>
@@ -77,7 +78,7 @@
        @endif
       @if($res->rol=='3')
           <span class="label label-success">Tecnico</span>
-      @endif
+      @endif  
       @if($res->rol=='4')
           <span class="label label-info">Empleado</span>
       @endif
@@ -106,7 +107,7 @@
       </div>
 
       @else
-      <br><small>No hay archivo adjunto.</small>
+      <br><br>
       @endif
 
       <br>
