@@ -3,8 +3,6 @@
   <h2><a href="{{ url('/') }}"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span></a>Sistema de control de incidencias</h2>
 @stop
 
-{{-- Comment: Necesita darle forma y empezar a moverle. --}}
-
 @section('contenido')
 <form class="form-horizontal" method="POST" action="{{url('/agregar_ticket')}}" enctype="multipart/form-data">
   <input name="_token" type="hidden" value="{{ csrf_token() }}"/>
