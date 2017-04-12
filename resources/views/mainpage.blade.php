@@ -8,7 +8,6 @@
 	<link rel="stylesheet" href="{{asset("css/jquery.dataTables.min.css")}}">
 	<script src="{{ asset('js/jquery.js') }}"></script>
 	<script src="{{ asset('js/datatable.js') }}"></script>
-	<script src="{{ asset('js/copytable.js') }}"></script>
 	<script src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 	
 </head>

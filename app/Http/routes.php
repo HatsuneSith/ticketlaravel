@@ -18,7 +18,6 @@ Route::get('/', function () {
 
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
 Route::get('/nuevo_ticket', 'HomeController@nuevo');
 Route::post('/agregar_ticket', 'HomeController@agregar_ticket');
 Route::post('/agregar_respuesta', 'HomeController@agregar_respuesta');

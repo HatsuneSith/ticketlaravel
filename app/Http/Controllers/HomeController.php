@@ -19,12 +19,6 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-
-    public function index()
-    {
-        return view('home');
-    }
-
     public function nuevo(){
 
         return view('nuevoticket');
@@ -217,7 +211,7 @@ class HomeController extends Controller
         DB:: table('respuestas')
         ->where('incidencias_id')
         ->delete();
-    return redirect()->back();
+    return redirect('/lista');
     }
 
 }

@@ -13,7 +13,7 @@
 				<th>Departamento</th>
 				<th>Usuario</th>
 				<th>Colaborador Asignado</th>
-				<th>Fecha de apertura</th>
+				<th>Fecha de Actualizacion</th>
 				<th></th>
 			</tr>
 		</thead>
